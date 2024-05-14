@@ -11,12 +11,10 @@ import {
 } from 'fastify-type-provider-zod';
 
 import { errorHandler } from './error-handler';
-import { checkIn } from './routes/check-in';
-import { createEvent } from './routes/create-event';
-import { getAttendeeBadge } from './routes/get-attendee-badge';
-import { getEvent } from './routes/get-event';
-import { getEventAttendees } from './routes/get-event-attendees';
-import { registerForEvent } from './routes/register-for-event';
+import { createJob } from './routes/create-job';
+import { createUser } from './routes/create-user';
+import { getJob } from './routes/get-job';
+import { getUser } from './routes/get-user';
 
 const app = fastify().withTypeProvider<ZodTypeProvider>();
 
@@ -45,12 +43,10 @@ app.register(fastifySwaggerUI, {
 app.setValidatorCompiler(validatorCompiler);
 app.setSerializerCompiler(serializerCompiler);
 
-app.register(createEvent);
-app.register(registerForEvent);
-app.register(getEvent);
-app.register(getAttendeeBadge);
-app.register(checkIn);
-app.register(getEventAttendees);
+app.register(createUser);
+app.register(createJob);
+app.register(getUser);
+app.register(getJob);
 
 app.setErrorHandler(errorHandler);
 

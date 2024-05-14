@@ -1,29 +1,27 @@
-POST http://localhost:3333/events
+POST http://localhost:3333/users
 Content-Type: application/json
 
 {
-  "title": "New Event",
-  "details": "Evento de tecnologia com muito conteúdo",
-  "maximumAttendees": 1
+ "email": "isaacsvianna@gmail.com",
+  "password": "123456",
+  "role": "ADMIN"
 }
 
 ###
-POST http://localhost:3333/events/912b8e37-f639-4625-bc7a-5fe3c72c695d/attendees
+POST http://localhost:3333/jobs
 Content-Type: application/json
 
 {
-  "name": "Isaac Vianna",
-  "email": "isaac@rocketseat.com.br"
+  "title": "Cuidador de idoso com Alzheimer",
+  "description": "Cuidar de idoso com Alzheimer, realizar atividades de lazer, higiene pessoal e alimentação.",
+  "salary": 3000,
+  "contractType": "CLT",
+  "location": "Rio de Janeiro - RJ",
+  "user": "5ba865bf-b200-4ac1-8dd6-cf8f76a5e0f6"
 }
 
 ###
-GET http://localhost:3333/events/912b8e37-f639-4625-bc7a-5fe3c72c695d
+GET http://localhost:3333/users/5ba865bf-b200-4ac1-8dd6-cf8f76a5e0f6
 
 ###
-GET http://localhost:3333/attendees/2/badge
-
-###
-GET http://localhost:3333/attendees/3/check-in
-
-###
-GET http://localhost:3333/events/912b8e37-f639-4625-bc7a-5fe3c72c695d/attendees?query=diego
+GET http://localhost:3333/jobs/2
