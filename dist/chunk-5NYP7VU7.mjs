@@ -1,0 +1,1 @@
+import{a as s}from"./chunk-MDVFZHLF.mjs";import{ZodError as t}from"zod";var i=(r,a,e)=>r instanceof t?e.status(400).send({message:"Error during validation",errors:r.flatten().fieldErrors}):r instanceof s?e.status(400).send({message:r.message}):e.status(500).send({message:"Internal server error"});export{i as a};

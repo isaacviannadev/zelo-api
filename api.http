@@ -1,0 +1,29 @@
+POST http://localhost:3333/events
+Content-Type: application/json
+
+{
+  "title": "New Event",
+  "details": "Evento de tecnologia com muito conteúdo",
+  "maximumAttendees": 1
+}
+
+###
+POST http://localhost:3333/events/912b8e37-f639-4625-bc7a-5fe3c72c695d/attendees
+Content-Type: application/json
+
+{
+  "name": "Isaac Vianna",
+  "email": "isaac@rocketseat.com.br"
+}
+
+###
+GET http://localhost:3333/events/912b8e37-f639-4625-bc7a-5fe3c72c695d
+
+###
+GET http://localhost:3333/attendees/2/badge
+
+###
+GET http://localhost:3333/attendees/3/check-in
+
+###
+GET http://localhost:3333/events/912b8e37-f639-4625-bc7a-5fe3c72c695d/attendees?query=diego
